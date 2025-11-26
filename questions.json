@@ -7,7 +7,7 @@
       "title": "Szenario 1: Reh oder Leitplanke?",
       "context": "Landstraße bei 80 km/h. Ein Reh springt unvermittelt auf die Fahrbahn.",
       "prompt": "Welche Option soll der Algorithmus wählen?",
-      "imagePath": "../images/1_landstrasse_von_oben__begegnung_mit_der_natur.png",
+      "imagePath": "./images/1_landstrasse_von_oben__begegnung_mit_der_natur.png",
       "imageCaption": "Platzhaltergrafik: Auto, Reh links, Leitplanke rechts.",
       "options": [
         {
@@ -47,7 +47,7 @@
       "title": "Szenario 2: Fuchs oder Ausweichmanöver?",
       "context": "Nachtfahrt. Ein Fuchs kreuzt plötzlich die Straße.",
       "prompt": "Wie soll das Fahrzeug reagieren?",
-      "imagePath": "../images/2_naechtliche_strassenszene_mit_fuchs.png",
+      "imagePath": "./images/2_naechtliche_strassenszene_mit_fuchs.png",
       "imageCaption": "Platzhaltergrafik: Straße bei Nacht, Fuchs.",
       "options": [
         {
@@ -87,7 +87,7 @@
       "title": "Szenario 3: Vollbremsung oder weiterrollen?",
       "context": "Innenstadt. Ein Ball rollt auf die Fahrbahn.",
       "prompt": "Wie soll der Algorithmus reagieren?",
-      "imagePath": "../images/3_stadtstrasse_von_oben_mit_rollendem_ball.png",
+      "imagePath": "./images/3_stadtstrasse_von_oben_mit_rollendem_ball.png",
       "imageCaption": "Platzhaltergrafik: Ball auf Fahrbahn.",
       "options": [
         {
@@ -127,7 +127,7 @@
       "title": "Szenario 4: Baustellenabsicherung oder Fußgänger?",
       "context": "Baustelle in der Stadt. Ein Fußgänger läuft unachtsam auf die Fahrbahn.",
       "prompt": "Wohin soll das Fahrzeug ausweichen?",
-      "imagePath": "../images/4_baustelle_von_oben__gefaehrliche_strassensituation.png",
+      "imagePath": "./images/4_baustelle_von_oben__gefaehrliche_strassensituation.png",
       "imageCaption": "Platzhaltergrafik: Baustelle, Fußgänger.",
       "options": [
         {
@@ -168,7 +168,7 @@
       "title": "Szenario 5: Zebrastreifen — Kind oder ältere Person?",
       "context": "Beide betreten gleichzeitig unachtsam den Übergang.",
       "prompt": "Wem soll der Algorithmus ausweichen?",
-      "imagePath": "../images/5_zebrastreifen_von_oben__verkehrssituation_im_stadtverkehr.png",
+      "imagePath": "./images/5_zebrastreifen_von_oben__verkehrssituation_im_stadtverkehr.png",
       "imageCaption": "Platzhalter: Kind und ältere Person.",
       "options": [
         {
@@ -209,7 +209,7 @@
       "title": "Szenario 6: Fahrer:in gefährden oder drei Erwachsene?",
       "context": "Ein geparktes Auto blockiert die einzige sichere Ausweichroute.",
       "prompt": "Welche Entscheidung soll bevorzugt werden?",
-      "imagePath": "../images/6_verkehrssituation_aus_der_vogelperspektive.png",
+      "imagePath": "./images/6_verkehrssituation_aus_der_vogelperspektive.png",
       "imageCaption": "3 Erwachsene vs. Fahrzeugschaden.",
       "options": [
         {
@@ -250,7 +250,7 @@
       "title": "Szenario 7: Tiergruppe oder Menschengruppe?",
       "context": "Zwei Gruppen blockieren jeweils einen Fluchtweg.",
       "prompt": "Welche Gruppe soll bevorzugt geschützt werden?",
-      "imagePath": "../images/7_die_gabelung_der_entscheidung.png",
+      "imagePath": "./images/7_die_gabelung_der_entscheidung.png",
       "imageCaption": "Tiere links, Menschen rechts.",
       "options": [
         {
@@ -296,7 +296,7 @@
       "title": "Szenario 8: Fahrerin gefährden oder Kindergruppe?",
       "context": "Eine Gruppe von spielenden Kindern blockiert die Straße.",
       "prompt": "Welche Option soll der Algorithmus bevorzugen?",
-      "imagePath": "../images/8_schwierige_strassensituation_von_oben.png",
+      "imagePath": "./images/8_schwierige_strassensituation_von_oben.png",
       "imageCaption": "Kindergruppe vor dem Auto.",
       "options": [
         {
@@ -337,7 +337,7 @@
       "title": "Szenario 9: Regelverletzer oder Regelbefolger?",
       "context": "Zwei Personen — eine läuft bei Rot, eine geht korrekt bei Grün.",
       "prompt": "Wen soll das Fahrzeug bevorzugen?",
-      "imagePath": "../images/9_verkehrskreuzung_aus_der_vogelperspektive.png",
+      "imagePath": "./images/9_verkehrskreuzung_aus_der_vogelperspektive.png",
       "imageCaption": "Rotgänger links, Grüngänger rechts.",
       "options": [
         {
@@ -378,7 +378,7 @@
       "title": "Szenario 10: Ein Erwachsener oder zwei Jugendliche?",
       "context": "Beide Gruppen sind durch Baustellenmaterial eingeengt.",
       "prompt": "Wen soll der Algorithmus priorisieren?",
-      "imagePath": "../images/10_baustelle_aus_der_vogelperspektive.png",
+      "imagePath": "./images/10_baustelle_aus_der_vogelperspektive.png",
       "imageCaption": "Erwachsener links, zwei Jugendliche rechts.",
       "options": [
         {
@@ -419,7 +419,7 @@
       "title": "Szenario 11: Unsichere Erkennung — Kinder oder Erwachsene?",
       "context": "Sensoren liefern keine klaren Daten.",
       "prompt": "Welche Entscheidung bevorzugen?",
-      "imagePath": "../images/11_strassenszene_mit_visueller_ungewissheit.png",
+      "imagePath": "./images/11_strassenszene_mit_visueller_ungewissheit.png",
       "imageCaption": "Unscharfe Menschengruppe.",
       "options": [
         {
@@ -474,7 +474,7 @@
       "title": "Szenario 12: Fahrer:in stirbt mit 30 % — Kind stirbt mit 90 %",
       "context": "Vollbremsung nicht mehr möglich.",
       "prompt": "Welche Option soll der Algorithmus wählen?",
-      "imagePath": "../images/12_verkehrssicherheit_bildungsdiagramm.png",
+      "imagePath": "./images/12_verkehrssicherheit_bildungsdiagramm.png",
       "imageCaption": "Auto, Fahrer vs. Kind.",
       "options": [
         {
@@ -515,7 +515,7 @@
       "title": "Szenario 13: 50 % Gefahr für Insassen — 70 % für Passanten",
       "context": "Der Algorithmus muss Wahrscheinlichkeiten vergleichen.",
       "prompt": "Welche Gruppe soll bevorzugt geschützt werden?",
-      "imagePath": "../images/13_verkehrsentscheidungen_aus_der_vogelperspektive.png",
+      "imagePath": "./images/13_verkehrsentscheidungen_aus_der_vogelperspektive.png",
       "imageCaption": "Auto, zwei Passanten.",
       "options": [
         {
@@ -557,7 +557,7 @@
       "title": "Szenario 14: Unsichere Tier-/Menschenklassifikation",
       "context": "Sensoren sind durch Nebel beeinträchtigt.",
       "prompt": "Welche Route soll das Fahrzeug wählen?",
-      "imagePath": "../images/14_neblige_strassenszene_aus_der_vogelperspektive.png",
+      "imagePath": "./images/14_neblige_strassenszene_aus_der_vogelperspektive.png",
       "imageCaption": "Unscharfe Silhouetten im Nebel.",
       "options": [
         {
@@ -606,7 +606,7 @@
       "title": "Szenario 15: Entscheidung mit unvollständigen Daten",
       "context": "Es ist unklar, ob die Person verletztlich oder gesund ist.",
       "prompt": "Welche Seite soll gewählt werden?",
-      "imagePath": "../images/15_autonome_fahrzeugsensordaten_diagramm.png",
+      "imagePath": "./images/15_autonome_fahrzeugsensordaten_diagramm.png",
       "imageCaption": "Unscharfe Person.",
       "options": [
         {
@@ -648,7 +648,7 @@
       "title": "Szenario 16: Drei ältere Personen oder ein Kind — mit Wahrscheinlichkeiten",
       "context": "Kollisionswahrscheinlichkeit abhängig von Wahlrichtung.",
       "prompt": "Welche Entscheidung bevorzugen?",
-      "imagePath": "../images/16_entscheidung_am_scheideweg.png",
+      "imagePath": "./images/16_entscheidung_am_scheideweg.png",
       "imageCaption": "Kind vs. ältere Gruppe.",
       "options": [
         {
@@ -689,7 +689,7 @@
       "title": "Szenario 17: 90 % Überleben eines Tieres vs. 40 % Überleben eines Menschen",
       "context": "Erkennung eindeutig.",
       "prompt": "Welche Entscheidung soll der Algorithmus treffen?",
-      "imagePath": "../images/17_verkehrsentscheidung_sicherheitsdiagramm.png",
+      "imagePath": "./images/17_verkehrsentscheidung_sicherheitsdiagramm.png",
       "imageCaption": "Tier vs. Mensch.",
       "options": [
         {
@@ -730,7 +730,7 @@
       "title": "Szenario 18: 30 % Wahrscheinlichkeit Kindergruppe — 70 % Erwachsenengruppe",
       "context": "Nebel beeinträchtigt Sensoren erheblich.",
       "prompt": "Welche Seite sollte das Fahrzeug wählen?",
-      "imagePath": "../images/18_entscheidung_im_nebel_verkehrsdiagramm.png",
+      "imagePath": "./images/18_entscheidung_im_nebel_verkehrsdiagramm.png",
       "imageCaption": "Nebel, zwei unklare Gruppen.",
       "options": [
         {
@@ -778,7 +778,7 @@
       "title": "Szenario 19: Priorisierung nach Gruppengröße oder Überlebenswahrscheinlichkeit?",
       "context": "Große Gruppe mit wenig Überlebenschancen vs. kleine Gruppe mit hoher Überlebensrate.",
       "prompt": "Was wiegt stärker?",
-      "imagePath": "../images/19_bildungsdiagramm_gruppengroessenwahrscheinlichkeiten.png",
+      "imagePath": "./images/19_bildungsdiagramm_gruppengroessenwahrscheinlichkeiten.png",
       "imageCaption": "Zwei Gruppen unterschiedlicher Größe.",
       "options": [
         {
@@ -819,7 +819,7 @@
       "title": "Szenario 20: Fahrer:in 50 %, Fußgänger 60 %",
       "context": "Crash ist unvermeidbar.",
       "prompt": "Welche Option soll bevorzugt werden?",
-      "imagePath": "../images/20_verkehrssicherheit_aus_der_vogelperspektive.png",
+      "imagePath": "./images/20_verkehrssicherheit_aus_der_vogelperspektive.png",
       "imageCaption": "Auto, ein Fußgänger.",
       "options": [
         {
