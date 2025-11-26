@@ -1,0 +1,863 @@
+{
+  "levels": [
+    {
+      "id": "basic-1",
+      "type": "dilemma",
+      "difficulty": 1,
+      "title": "Szenario 1: Reh oder Leitplanke?",
+      "context": "Landstraße bei 80 km/h. Ein Reh springt unvermittelt auf die Fahrbahn.",
+      "prompt": "Welche Option soll der Algorithmus wählen?",
+      "imagePath": "../images/1_landstrasse_von_oben__begegnung_mit_der_natur.png",
+      "imageCaption": "Platzhaltergrafik: Auto, Reh links, Leitplanke rechts.",
+      "options": [
+        {
+          "id": "hit_deer",
+          "label": "Reh erfassen",
+          "description": "Das Tier wird tödlich verletzt, die Insassen bleiben mit hoher Wahrscheinlichkeit unverletzt.",
+          "affectedActors": [
+            {
+              "role": "Tier",
+              "ageGroup": "n/a",
+              "count": 1
+            }
+          ],
+          "driverRisk": "gering",
+          "ethicalTags": ["mensch_vs_tier"]
+        },
+        {
+          "id": "hit_guardrail",
+          "label": "Gegen die Leitplanke ausweichen",
+          "description": "Das Fahrzeug wird beschädigt, Insassen können verletzt werden.",
+          "affectedActors": [
+            {
+              "role": "Fahrer:in",
+              "ageGroup": "erwachsen",
+              "count": 1
+            }
+          ],
+          "driverRisk": "mittel",
+          "ethicalTags": ["selbstopfer_vs_fremdschaden"]
+        }
+      ]
+    },
+    {
+      "id": "basic-2",
+      "type": "dilemma",
+      "difficulty": 1,
+      "title": "Szenario 2: Fuchs oder Ausweichmanöver?",
+      "context": "Nachtfahrt. Ein Fuchs kreuzt plötzlich die Straße.",
+      "prompt": "Wie soll das Fahrzeug reagieren?",
+      "imagePath": "../images/2_naechtliche_strassenszene_mit_fuchs.png",
+      "imageCaption": "Platzhaltergrafik: Straße bei Nacht, Fuchs.",
+      "options": [
+        {
+          "id": "hit_fox",
+          "label": "Tier erfassen",
+          "description": "Der Fuchs wird verletzt oder getötet, Insassen bleiben sicher.",
+          "affectedActors": [
+            {
+              "role": "Tier",
+              "ageGroup": "n/a",
+              "count": 1
+            }
+          ],
+          "driverRisk": "gering",
+          "ethicalTags": ["mensch_vs_tier"]
+        },
+        {
+          "id": "swerve",
+          "label": "Ausweichmanöver riskieren",
+          "description": "Das Fahrzeug kann ins Schleudern geraten.",
+          "affectedActors": [
+            {
+              "role": "Fahrer:in",
+              "ageGroup": "erwachsen",
+              "count": 1
+            }
+          ],
+          "driverRisk": "hoch",
+          "ethicalTags": ["risikoabwägung"]
+        }
+      ]
+    },
+    {
+      "id": "basic-3",
+      "type": "dilemma",
+      "difficulty": 1,
+      "title": "Szenario 3: Vollbremsung oder weiterrollen?",
+      "context": "Innenstadt. Ein Ball rollt auf die Fahrbahn.",
+      "prompt": "Wie soll der Algorithmus reagieren?",
+      "imagePath": "../images/3_stadtstrasse_von_oben_mit_rollendem_ball.png",
+      "imageCaption": "Platzhaltergrafik: Ball auf Fahrbahn.",
+      "options": [
+        {
+          "id": "brake",
+          "label": "Sofort bremsen",
+          "description": "Möglicher Auffahrunfall durch nachfolgendes Fahrzeug.",
+          "affectedActors": [
+            {
+              "role": "Insassen",
+              "ageGroup": "erwachsen",
+              "count": 2
+            }
+          ],
+          "driverRisk": "mittel",
+          "ethicalTags": ["risiko_hinten"]
+        },
+        {
+          "id": "roll",
+          "label": "Weiterrollen",
+          "description": "Risiko, dass ein Kind hinter dem Ball folgt.",
+          "affectedActors": [
+            {
+              "role": "Kinder",
+              "ageGroup": "jung",
+              "count": 1
+            }
+          ],
+          "driverRisk": "gering",
+          "ethicalTags": ["schutz_von_kindern"]
+        }
+      ]
+    },
+    {
+      "id": "basic-4",
+      "type": "dilemma",
+      "difficulty": 1,
+      "title": "Szenario 4: Baustellenabsicherung oder Fußgänger?",
+      "context": "Baustelle in der Stadt. Ein Fußgänger läuft unachtsam auf die Fahrbahn.",
+      "prompt": "Wohin soll das Fahrzeug ausweichen?",
+      "imagePath": "../images/4_baustelle_von_oben__gefaehrliche_strassensituation.png",
+      "imageCaption": "Platzhaltergrafik: Baustelle, Fußgänger.",
+      "options": [
+        {
+          "id": "hit_barrier",
+          "label": "In Baustellenabsperrung lenken",
+          "description": "Materialschäden, leichte Verletzungen der Insassen möglich.",
+          "affectedActors": [
+            {
+              "role": "Insassen",
+              "ageGroup": "erwachsen",
+              "count": 1
+            }
+          ],
+          "driverRisk": "mittel",
+          "ethicalTags": ["sachschaden_vs_personenschaden"]
+        },
+        {
+          "id": "hit_pedestrian",
+          "label": "Fußgänger erfassen",
+          "description": "Der Fußgänger wird verletzt.",
+          "affectedActors": [
+            {
+              "role": "Fußgänger",
+              "ageGroup": "erwachsen",
+              "count": 1
+            }
+          ],
+          "driverRisk": "gering",
+          "ethicalTags": ["schutz_von_menschen"]
+        }
+      ]
+    },
+
+    {
+      "id": "mid-1",
+      "type": "dilemma",
+      "difficulty": 2,
+      "title": "Szenario 5: Zebrastreifen — Kind oder ältere Person?",
+      "context": "Beide betreten gleichzeitig unachtsam den Übergang.",
+      "prompt": "Wem soll der Algorithmus ausweichen?",
+      "imagePath": "../images/5_zebrastreifen_von_oben__verkehrssituation_im_stadtverkehr.png",
+      "imageCaption": "Platzhalter: Kind und ältere Person.",
+      "options": [
+        {
+          "id": "avoid_child",
+          "label": "Kind schützen",
+          "description": "Das ältere Individuum wird gefährdet.",
+          "affectedActors": [
+            {
+              "role": "Ältere Person",
+              "ageGroup": "alt",
+              "count": 1
+            }
+          ],
+          "driverRisk": "gering",
+          "ethicalTags": ["lebenserwartung", "schutz_von_kindern"]
+        },
+        {
+          "id": "avoid_elder",
+          "label": "Ältere Person schützen",
+          "description": "Das Kind wird gefährdet.",
+          "affectedActors": [
+            {
+              "role": "Kind",
+              "ageGroup": "jung",
+              "count": 1
+            }
+          ],
+          "driverRisk": "gering",
+          "ethicalTags": ["kinder_betroffen"]
+        }
+      ]
+    },
+
+    {
+      "id": "mid-2",
+      "type": "dilemma",
+      "difficulty": 2,
+      "title": "Szenario 6: Fahrer:in gefährden oder drei Erwachsene?",
+      "context": "Ein geparktes Auto blockiert die einzige sichere Ausweichroute.",
+      "prompt": "Welche Entscheidung soll bevorzugt werden?",
+      "imagePath": "../images/6_verkehrssituation_aus_der_vogelperspektive.png",
+      "imageCaption": "3 Erwachsene vs. Fahrzeugschaden.",
+      "options": [
+        {
+          "id": "protect_driver",
+          "label": "Insassen schützen",
+          "description": "Alle drei Erwachsenen werden gefährdet.",
+          "affectedActors": [
+            {
+              "role": "Erwachsene",
+              "ageGroup": "erwachsen",
+              "count": 3
+            }
+          ],
+          "driverRisk": "gering",
+          "ethicalTags": ["mehrheitsprinzip"]
+        },
+        {
+          "id": "sacrifice_driver",
+          "label": "Fahrzeug gegen Hindernis lenken",
+          "description": "Die Insassen riskieren schwere Verletzungen.",
+          "affectedActors": [
+            {
+              "role": "Fahrer:in",
+              "ageGroup": "erwachsen",
+              "count": 1
+            }
+          ],
+          "driverRisk": "hoch",
+          "ethicalTags": ["selbstopfer_vs_fremdschaden"]
+        }
+      ]
+    },
+
+    {
+      "id": "mid-3",
+      "type": "dilemma",
+      "difficulty": 2,
+      "title": "Szenario 7: Tiergruppe oder Menschengruppe?",
+      "context": "Zwei Gruppen blockieren jeweils einen Fluchtweg.",
+      "prompt": "Welche Gruppe soll bevorzugt geschützt werden?",
+      "imagePath": "../images/7_die_gabelung_der_entscheidung.png",
+      "imageCaption": "Tiere links, Menschen rechts.",
+      "options": [
+        {
+          "id": "avoid_animals",
+          "label": "Tiergruppe gefährden",
+          "description": "Zwei Füchse werden verletzt.",
+          "affectedActors": [
+            {
+              "role": "Tier",
+              "ageGroup": "n/a",
+              "count": 2
+            }
+          ],
+          "driverRisk": "gering",
+          "ethicalTags": ["mensch_vs_tier"]
+        },
+        {
+          "id": "avoid_humans",
+          "label": "Menschen gefährden",
+          "description": "Ein Erwachsener und ein Jugendlicher werden verletzt.",
+          "affectedActors": [
+            {
+              "role": "Erwachsene",
+              "ageGroup": "erwachsen",
+              "count": 1
+            },
+            {
+              "role": "Jugendliche",
+              "ageGroup": "jung",
+              "count": 1
+            }
+          ],
+          "driverRisk": "gering",
+          "ethicalTags": ["schutz_von_menschen"]
+        }
+      ]
+    },
+
+    {
+      "id": "mid-4",
+      "type": "dilemma",
+      "difficulty": 2,
+      "title": "Szenario 8: Fahrerin gefährden oder Kindergruppe?",
+      "context": "Eine Gruppe von spielenden Kindern blockiert die Straße.",
+      "prompt": "Welche Option soll der Algorithmus bevorzugen?",
+      "imagePath": "../images/8_schwierige_strassensituation_von_oben.png",
+      "imageCaption": "Kindergruppe vor dem Auto.",
+      "options": [
+        {
+          "id": "hit_obstacle",
+          "label": "In massives Hindernis lenken",
+          "description": "Die Fahrerin wird schwer verletzt.",
+          "affectedActors": [
+            {
+              "role": "Fahrerin",
+              "ageGroup": "erwachsen",
+              "count": 1
+            }
+          ],
+          "driverRisk": "hoch",
+          "ethicalTags": ["selbstopfer"]
+        },
+        {
+          "id": "hit_children",
+          "label": "Kinder gefährden",
+          "description": "Drei Kinder können verletzt werden.",
+          "affectedActors": [
+            {
+              "role": "Kinder",
+              "ageGroup": "jung",
+              "count": 3
+            }
+          ],
+          "driverRisk": "gering",
+          "ethicalTags": ["schutz_von_kindern"]
+        }
+      ]
+    },
+
+    {
+      "id": "mid-5",
+      "type": "dilemma",
+      "difficulty": 2,
+      "title": "Szenario 9: Regelverletzer oder Regelbefolger?",
+      "context": "Zwei Personen — eine läuft bei Rot, eine geht korrekt bei Grün.",
+      "prompt": "Wen soll das Fahrzeug bevorzugen?",
+      "imagePath": "../images/9_verkehrskreuzung_aus_der_vogelperspektive.png",
+      "imageCaption": "Rotgänger links, Grüngänger rechts.",
+      "options": [
+        {
+          "id": "hit_rulebreaker",
+          "label": "Rotgänger gefährden",
+          "description": "Die regelwidrig handelnde Person wird gefährdet.",
+          "affectedActors": [
+            {
+              "role": "Fußgänger",
+              "ageGroup": "erwachsen",
+              "count": 1
+            }
+          ],
+          "driverRisk": "gering",
+          "ethicalTags": ["regelverletzer_vs_regelbefolger"]
+        },
+        {
+          "id": "hit_rulefollower",
+          "label": "Grüngänger gefährden",
+          "description": "Eine regelkonform handelnde Person wird verletzt.",
+          "affectedActors": [
+            {
+              "role": "Fußgänger",
+              "ageGroup": "erwachsen",
+              "count": 1
+            }
+          ],
+          "driverRisk": "gering",
+          "ethicalTags": ["schutz_von_regelbefolgern"]
+        }
+      ]
+    },
+
+    {
+      "id": "mid-6",
+      "type": "dilemma",
+      "difficulty": 2,
+      "title": "Szenario 10: Ein Erwachsener oder zwei Jugendliche?",
+      "context": "Beide Gruppen sind durch Baustellenmaterial eingeengt.",
+      "prompt": "Wen soll der Algorithmus priorisieren?",
+      "imagePath": "../images/10_baustelle_aus_der_vogelperspektive.png",
+      "imageCaption": "Erwachsener links, zwei Jugendliche rechts.",
+      "options": [
+        {
+          "id": "protect_adult",
+          "label": "Erwachsenen schützen",
+          "description": "Zwei Jugendliche werden gefährdet.",
+          "affectedActors": [
+            {
+              "role": "Jugendliche",
+              "ageGroup": "jung",
+              "count": 2
+            }
+          ],
+          "driverRisk": "gering",
+          "ethicalTags": ["lebenserwartung"]
+        },
+        {
+          "id": "protect_youth",
+          "label": "Jugendliche schützen",
+          "description": "Der Erwachsene wird gefährdet.",
+          "affectedActors": [
+            {
+              "role": "Erwachsener",
+              "ageGroup": "erwachsen",
+              "count": 1
+            }
+          ],
+          "driverRisk": "gering",
+          "ethicalTags": ["mehrheitsprinzip"]
+        }
+      ]
+    },
+
+    {
+      "id": "prob-1",
+      "type": "dilemma",
+      "difficulty": 3,
+      "title": "Szenario 11: Unsichere Erkennung — Kinder oder Erwachsene?",
+      "context": "Sensoren liefern keine klaren Daten.",
+      "prompt": "Welche Entscheidung bevorzugen?",
+      "imagePath": "../images/11_strassenszene_mit_visueller_ungewissheit.png",
+      "imageCaption": "Unscharfe Menschengruppe.",
+      "options": [
+        {
+          "id": "prob_children",
+          "label": "Links ausweichen",
+          "description": "70 % Kinder, 30 % Erwachsene; Überlebenschance: 45 %. ",
+          "affectedActors": [
+            {
+              "role": "Kinder",
+              "ageGroup": "jung",
+              "count": 2,
+              "probability": 0.7
+            },
+            {
+              "role": "Erwachsene",
+              "ageGroup": "erwachsen",
+              "count": 2,
+              "probability": 0.3
+            }
+          ],
+          "survivalChance": 0.45,
+          "ethicalTags": ["unsicherheit"]
+        },
+        {
+          "id": "prob_adults",
+          "label": "Rechts ausweichen",
+          "description": "60 % Erwachsene, 40 % Tiere; Überlebenschance: 70 %. ",
+          "affectedActors": [
+            {
+              "role": "Erwachsene",
+              "ageGroup": "erwachsen",
+              "count": 2,
+              "probability": 0.6
+            },
+            {
+              "role": "Tiere",
+              "ageGroup": "n/a",
+              "count": 2,
+              "probability": 0.4
+            }
+          ],
+          "survivalChance": 0.7,
+          "ethicalTags": ["mensch_vs_tier", "unsicherheit"]
+        }
+      ]
+    },
+
+    {
+      "id": "prob-2",
+      "type": "dilemma",
+      "difficulty": 3,
+      "title": "Szenario 12: Fahrer:in stirbt mit 30 % — Kind stirbt mit 90 %",
+      "context": "Vollbremsung nicht mehr möglich.",
+      "prompt": "Welche Option soll der Algorithmus wählen?",
+      "imagePath": "../images/12_verkehrssicherheit_bildungsdiagramm.png",
+      "imageCaption": "Auto, Fahrer vs. Kind.",
+      "options": [
+        {
+          "id": "save_child",
+          "label": "Fahrerin gefährden",
+          "description": "Überlebenschance der Fahrerin: 70 %. Kind bleibt sicher.",
+          "affectedActors": [
+            {
+              "role": "Fahrerin",
+              "ageGroup": "erwachsen",
+              "count": 1
+            }
+          ],
+          "survivalChance": 0.7,
+          "ethicalTags": ["schutz_von_kindern"]
+        },
+        {
+          "id": "save_driver",
+          "label": "Kind gefährden",
+          "description": "Überlebenschance des Kindes: 10 %. Fahrerin bleibt unverletzt.",
+          "affectedActors": [
+            {
+              "role": "Kind",
+              "ageGroup": "jung",
+              "count": 1
+            }
+          ],
+          "survivalChance": 0.1,
+          "ethicalTags": ["lebenserwartung"]
+        }
+      ]
+    },
+
+    {
+      "id": "prob-3",
+      "type": "dilemma",
+      "difficulty": 3,
+      "title": "Szenario 13: 50 % Gefahr für Insassen — 70 % für Passanten",
+      "context": "Der Algorithmus muss Wahrscheinlichkeiten vergleichen.",
+      "prompt": "Welche Gruppe soll bevorzugt geschützt werden?",
+      "imagePath": "../images/13_verkehrsentscheidungen_aus_der_vogelperspektive.png",
+      "imageCaption": "Auto, zwei Passanten.",
+      "options": [
+        {
+          "id": "protect_passers",
+          "label": "Passanten schützen",
+          "description": "Insassen haben 50 % Risiko schwerer Verletzungen.",
+          "affectedActors": [
+            {
+              "role": "Insassen",
+              "ageGroup": "erwachsen",
+              "count": 2
+            }
+          ],
+          "survivalChance": 0.5,
+          "ethicalTags": ["selbstopfer"]
+        },
+        {
+          "id": "protect_insiders",
+          "label": "Insassen schützen",
+          "description": "Passanten haben ein 70%iges Risiko."
+          ,
+          "affectedActors": [
+            {
+              "role": "Passanten",
+              "ageGroup": "erwachsen",
+              "count": 2
+            }
+          ],
+          "survivalChance": 0.3,
+          "ethicalTags": ["außenstehende_betroffen"]
+        }
+      ]
+    },
+
+    {
+      "id": "prob-4",
+      "type": "dilemma",
+      "difficulty": 3,
+      "title": "Szenario 14: Unsichere Tier-/Menschenklassifikation",
+      "context": "Sensoren sind durch Nebel beeinträchtigt.",
+      "prompt": "Welche Route soll das Fahrzeug wählen?",
+      "imagePath": "../images/14_neblige_strassenszene_aus_der_vogelperspektive.png",
+      "imageCaption": "Unscharfe Silhouetten im Nebel.",
+      "options": [
+        {
+          "id": "maybe_animals",
+          "label": "Links ausweichen",
+          "description": "40 % Tiere, 60 % Erwachsene; Überlebensrate: 55 %.",
+          "affectedActors": [
+            {
+              "role": "Tiere",
+              "ageGroup": "n/a",
+              "count": 2,
+              "probability": 0.4
+            },
+            {
+              "role": "Erwachsene",
+              "ageGroup": "erwachsen",
+              "count": 2,
+              "probability": 0.6
+            }
+          ],
+          "survivalChance": 0.55,
+          "ethicalTags": ["unsicherheit", "mensch_vs_tier"]
+        },
+        {
+          "id": "maybe_children",
+          "label": "Rechts ausweichen",
+          "description": "50 % Chance, dass dort Kinder stehen; Überlebensrate bei Kollision: 30 %.",
+          "affectedActors": [
+            {
+              "role": "Kinder",
+              "ageGroup": "jung",
+              "count": 2,
+              "probability": 0.5
+            }
+          ],
+          "survivalChance": 0.3,
+          "ethicalTags": ["schutz_von_kindern", "unsicherheit"]
+        }
+      ]
+    },
+
+    {
+      "id": "prob-5",
+      "type": "dilemma",
+      "difficulty": 3,
+      "title": "Szenario 15: Entscheidung mit unvollständigen Daten",
+      "context": "Es ist unklar, ob die Person verletztlich oder gesund ist.",
+      "prompt": "Welche Seite soll gewählt werden?",
+      "imagePath": "../images/15_autonome_fahrzeugsensordaten_diagramm.png",
+      "imageCaption": "Unscharfe Person.",
+      "options": [
+        {
+          "id": "unknown_vulnerable",
+          "label": "Person möglicher Risikogruppe gefährden (40 %)",
+          "description": "Überlebenschance: 60 %.",
+          "affectedActors": [
+            {
+              "role": "Erwachsene",
+              "ageGroup": "unbekannt",
+              "count": 1,
+              "probability": 0.4
+            }
+          ],
+          "survivalChance": 0.6,
+          "ethicalTags": ["unsicherheit"]
+        },
+        {
+          "id": "avoid_driver",
+          "label": "Insassen gefährden",
+          "description": "Überlebenschance der Insassen: 75 %.",
+          "affectedActors": [
+            {
+              "role": "Insassen",
+              "ageGroup": "erwachsen",
+              "count": 1
+            }
+          ],
+          "survivalChance": 0.75,
+          "ethicalTags": ["selbstopfer"]
+        }
+      ]
+    },
+
+    {
+      "id": "prob-6",
+      "type": "dilemma",
+      "difficulty": 3,
+      "title": "Szenario 16: Drei ältere Personen oder ein Kind — mit Wahrscheinlichkeiten",
+      "context": "Kollisionswahrscheinlichkeit abhängig von Wahlrichtung.",
+      "prompt": "Welche Entscheidung bevorzugen?",
+      "imagePath": "../images/16_entscheidung_am_scheideweg.png",
+      "imageCaption": "Kind vs. ältere Gruppe.",
+      "options": [
+        {
+          "id": "hit_older_group",
+          "label": "Ältere Gruppe gefährden",
+          "description": "Überlebenschance der Gruppe: 20 %.",
+          "affectedActors": [
+            {
+              "role": "Ältere Personen",
+              "ageGroup": "alt",
+              "count": 3
+            }
+          ],
+          "survivalChance": 0.2,
+          "ethicalTags": ["lebenserwartung","mehrheitsprinzip"]
+        },
+        {
+          "id": "hit_child",
+          "label": "Kind gefährden",
+          "description": "Überlebenschance des Kindes: 50 %.",
+          "affectedActors": [
+            {
+              "role": "Kind",
+              "ageGroup": "jung",
+              "count": 1
+            }
+          ],
+          "survivalChance": 0.5,
+          "ethicalTags": ["schutz_von_kindern"]
+        }
+      ]
+    },
+
+    {
+      "id": "prob-7",
+      "type": "dilemma",
+      "difficulty": 3,
+      "title": "Szenario 17: 90 % Überleben eines Tieres vs. 40 % Überleben eines Menschen",
+      "context": "Erkennung eindeutig.",
+      "prompt": "Welche Entscheidung soll der Algorithmus treffen?",
+      "imagePath": "../images/17_verkehrsentscheidung_sicherheitsdiagramm.png",
+      "imageCaption": "Tier vs. Mensch.",
+      "options": [
+        {
+          "id": "save_animal",
+          "label": "Tier schützen",
+          "description": "Mensch wird gefährdet (40 % Überlebenschance).",
+          "affectedActors": [
+            {
+              "role": "Erwachsener",
+              "ageGroup": "erwachsen",
+              "count": 1
+            }
+          ],
+          "survivalChance": 0.4,
+          "ethicalTags": ["mensch_vs_tier"]
+        },
+        {
+          "id": "save_human",
+          "label": "Mensch schützen",
+          "description": "Tier wird gefährdet (90 % Überlebenschance).",
+          "affectedActors": [
+            {
+              "role": "Tier",
+              "ageGroup": "n/a",
+              "count": 1
+            }
+          ],
+          "survivalChance": 0.9,
+          "ethicalTags": ["schutz_von_menschen"]
+        }
+      ]
+    },
+
+    {
+      "id": "prob-8",
+      "type": "dilemma",
+      "difficulty": 3,
+      "title": "Szenario 18: 30 % Wahrscheinlichkeit Kindergruppe — 70 % Erwachsenengruppe",
+      "context": "Nebel beeinträchtigt Sensoren erheblich.",
+      "prompt": "Welche Seite sollte das Fahrzeug wählen?",
+      "imagePath": "../images/18_entscheidung_im_nebel_verkehrsdiagramm.png",
+      "imageCaption": "Nebel, zwei unklare Gruppen.",
+      "options": [
+        {
+          "id": "maybe_kids",
+          "label": "Links ausweichen",
+          "description": "30 % Kinder, 70 % Erwachsene; Überlebenschance: 50 %.",
+          "affectedActors": [
+            {
+              "role": "Kinder",
+              "ageGroup": "jung",
+              "count": 2,
+              "probability": 0.3
+            },
+            {
+              "role": "Erwachsene",
+              "ageGroup": "erwachsen",
+              "count": 2,
+              "probability": 0.7
+            }
+          ],
+          "survivalChance": 0.5,
+          "ethicalTags": ["unsicherheit"]
+        },
+        {
+          "id": "maybe_driver_risk",
+          "label": "In Hindernis steuern",
+          "description": "Insassen haben 60 % Überlebenschance.",
+          "affectedActors": [
+            {
+              "role": "Insassen",
+              "ageGroup": "erwachsen",
+              "count": 1
+            }
+          ],
+          "survivalChance": 0.6,
+          "ethicalTags": ["selbstopfer"]
+        }
+      ]
+    },
+
+    {
+      "id": "prob-9",
+      "type": "dilemma",
+      "difficulty": 3,
+      "title": "Szenario 19: Priorisierung nach Gruppengröße oder Überlebenswahrscheinlichkeit?",
+      "context": "Große Gruppe mit wenig Überlebenschancen vs. kleine Gruppe mit hoher Überlebensrate.",
+      "prompt": "Was wiegt stärker?",
+      "imagePath": "../images/19_bildungsdiagramm_gruppengroessenwahrscheinlichkeiten.png",
+      "imageCaption": "Zwei Gruppen unterschiedlicher Größe.",
+      "options": [
+        {
+          "id": "large_group",
+          "label": "Größere Gruppe gefährden (20 % Überlebenschance)",
+          "description": "Vier Personen.",
+          "affectedActors": [
+            {
+              "role": "Erwachsene",
+              "ageGroup": "erwachsen",
+              "count": 4
+            }
+          ],
+          "survivalChance": 0.2,
+          "ethicalTags": ["mehrheitsprinzip"]
+        },
+        {
+          "id": "small_group",
+          "label": "Kleinere Gruppe gefährden (80 % Überlebenschance)",
+          "description": "Zwei Personen.",
+          "affectedActors": [
+            {
+              "role": "Jugendliche",
+              "ageGroup": "jung",
+              "count": 2
+            }
+          ],
+          "survivalChance": 0.8,
+          "ethicalTags": ["lebenserwartung"]
+        }
+      ]
+    },
+
+    {
+      "id": "prob-10",
+      "type": "dilemma",
+      "difficulty": 3,
+      "title": "Szenario 20: Fahrer:in 50 %, Fußgänger 60 %",
+      "context": "Crash ist unvermeidbar.",
+      "prompt": "Welche Option soll bevorzugt werden?",
+      "imagePath": "../images/20_verkehrssicherheit_aus_der_vogelperspektive.png",
+      "imageCaption": "Auto, ein Fußgänger.",
+      "options": [
+        {
+          "id": "protect_pedestrian",
+          "label": "Fußgänger schützen",
+          "description": "Fahrerin hat nur 50 % Überlebenschance.",
+          "affectedActors": [
+            {
+              "role": "Fahrerin",
+              "ageGroup": "erwachsen",
+              "count": 1
+            }
+          ],
+          "survivalChance": 0.5,
+          "ethicalTags": ["selbstopfer"]
+        },
+        {
+          "id": "protect_driver",
+          "label": "Fahrerin schützen",
+          "description": "Fußgänger hat 60 % Überlebenschance.",
+          "affectedActors": [
+            {
+              "role": "Fußgänger",
+              "ageGroup": "erwachsen",
+              "count": 1
+            }
+          ],
+          "survivalChance": 0.6,
+          "ethicalTags": ["außenstehende_betroffen"]
+        }
+      ]
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "title": "Auswertung Ihrer Entscheidungen",
+      "context": "Reflexion über ethische Tendenzen",
+      "imageCaption": "Platzhaltergrafik: Übersichtsdiagramm Ihrer Entscheidungen"
+    }
+  ]
+}
