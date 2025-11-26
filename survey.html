@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autonomes Fahren – Marktforschung</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header" aria-label="Kopfbereich der Befragung">
+    <div class="header-title">
+      <span class="header-title-main">Autonomes Fahren</span>
+      <span class="header-title-sub">Marktforschung zu Entscheidungsalgorithmen</span>
+    </div>
+    <div class="header-meta" aria-live="polite">
+      <div class="meta-row">
+        <span class="meta-label">Frage</span>
+        <span class="meta-value" id="meta-question-index">– / –</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <section class="exam-shell" aria-label="Befragung zum autonomen Fahren">
+  <div class="exam-grid">
+        <div class="exam-image-column">
+          <figure class="scenario-figure">
+            <div class="scenario-image-placeholder" id="scenario-image" aria-label="Szenarioabbildung"></div>
+            <figcaption class="scenario-caption" id="scenario-caption"></figcaption>
+          </figure>
+        </div>
+
+        <div class="exam-question-column">
+          <article class="question-card" id="question-card" tabindex="-1">
+            <header class="question-header">
+              <h1 class="question-title" id="question-title">Laden …</h1>
+              <p class="question-context" id="question-context"></p>
+            </header>
+
+            <div class="question-body" id="question-body">
+              <!-- Dynamische Inhalte: Einführungstext, Dilemma-Optionen, Auswertung -->
+            </div>
+
+            <div class="progress-bar" id="progress-bar" aria-label="Fragenübersicht"></div>
+
+            <div class="question-message" id="question-message" aria-live="polite"></div>
+          </article>
+        </div>
+      </div>
+
+      <nav class="exam-footer" aria-label="Navigation der Befragung">
+        <button class="nav-button nav-button-secondary" id="btn-prev" type="button">
+          Zurück
+        </button>
+        <div class="exam-footer-spacer"></div>
+        <button class="nav-button nav-button-primary" id="btn-next" type="button">
+          Weiter
+        </button>
+      </nav>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p class="footer-text">
+      Diese Simulation ist Teil einer Unterrichtseinheit zu Algorithmen und Ethik. Alle dargestellten Situationen sind fiktiv und dienen der Reflexion.
+    </p>
+    <div class="impressum">
+      <p>
+        Entwickelt für Lernende und Lehrende |
+        <a href="https://tinfo.space/teachers/Digitale_Tools/" target="_blank" rel="noopener">More apps and tools</a> |
+        <a href="http://contact.tinfo.space/" id="contact-link">Kontakt</a> |
+        <a href="https://linktr.ee/tinfo.space" target="_blank" rel="noopener">Links</a> |
+        <a href="https://github.com/HansTydecks" target="_blank" rel="noopener">GitHub</a> |
+        © 2025 Hans Tydecks
+      </p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Autonomes Fahren – Marktforschung</title>
+  <title>Willkommen – Autonomes Fahren</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,51 +12,65 @@
       <span class="header-title-main">Autonomes Fahren</span>
       <span class="header-title-sub">Marktforschung zu Entscheidungsalgorithmen</span>
     </div>
-    <div class="header-meta" aria-live="polite">
-      <div class="meta-row">
-        <span class="meta-label">Frage</span>
-        <span class="meta-value" id="meta-question-index">– / –</span>
-      </div>
-    </div>
   </header>
 
   <main class="app-main">
-    <section class="exam-shell" aria-label="Befragung zum autonomen Fahren">
-  <div class="exam-grid">
-        <div class="exam-image-column">
-          <figure class="scenario-figure">
-            <div class="scenario-image-placeholder" id="scenario-image" aria-label="Szenarioabbildung"></div>
-            <figcaption class="scenario-caption" id="scenario-caption"></figcaption>
-          </figure>
-        </div>
+    <section class="exam-shell" aria-label="Willkommen zur Befragung">
+      <div class="intro-container">
+        <article class="intro-card">
+          <header class="intro-header">
+            <h1 class="intro-main-title">Willkommen zur Studie</h1>
+            <p class="intro-subtitle">Ethische Entscheidungen im autonomen Fahren</p>
+          </header>
 
-        <div class="exam-question-column">
-          <article class="question-card" id="question-card" tabindex="-1">
-            <header class="question-header">
-              <h1 class="question-title" id="question-title">Laden …</h1>
-              <p class="question-context" id="question-context"></p>
-            </header>
-
-            <div class="question-body" id="question-body">
-              <!-- Dynamische Inhalte: Einführungstext, Dilemma-Optionen, Auswertung -->
+          <div class="intro-content">
+            <div class="intro-section">
+              <h2>Über diese Befragung</h2>
+              <p>
+                Sie nehmen an einer Marktforschungsstudie teil, die untersucht, wie Menschen über Entscheidungsalgorithmen 
+                in autonomen Fahrzeugen denken. Ihre Antworten helfen dabei zu verstehen, welche ethischen Prioritäten 
+                bei der Programmierung selbstfahrender Autos berücksichtigt werden sollten.
+              </p>
             </div>
 
-            <div class="progress-bar" id="progress-bar" aria-label="Fragenübersicht"></div>
+            <div class="intro-section">
+              <h2>Was erwartet Sie?</h2>
+              <p>
+                Sie werden mit <strong>20 fiktiven Verkehrsszenarien</strong> konfrontiert, in denen ein autonomes 
+                Fahrzeug eine schwierige Entscheidung treffen muss. Ihre Aufgabe ist es, jeweils eine Option auszuwählen, 
+                die Ihrer Meinung nach vom Algorithmus bevorzugt werden sollte.
+              </p>
+              <p>
+                <strong>Wichtig:</strong> Alle dargestellten Situationen sind fiktiv und dienen ausschließlich 
+                der Reflexion und Diskussion. Es gibt keine "richtigen" oder "falschen" Antworten.
+              </p>
+            </div>
 
-            <div class="question-message" id="question-message" aria-live="polite"></div>
-          </article>
-        </div>
+            <div class="intro-section">
+              <h2>Ihre Rolle</h2>
+              <p>
+                Stellen Sie sich vor, dass Ihre Entscheidungen als Vorgabe für die Programmierung eines 
+                Entscheidungsalgorithmus genutzt werden. Wie sollte ein autonomes Fahrzeug in kritischen 
+                Situationen reagieren?
+              </p>
+            </div>
+
+            <div class="intro-section intro-highlight">
+              <p style="margin: 0;">
+                <strong>Zeitaufwand:</strong> ca. 10–15 Minuten<br>
+                <strong>Szenarien:</strong> 20 Entscheidungssituationen<br>
+                <strong>Auswertung:</strong> Am Ende erhalten Sie eine Zusammenfassung Ihrer Tendenzen
+              </p>
+            </div>
+          </div>
+
+          <div class="intro-footer">
+            <a href="survey.html" class="nav-button nav-button-primary nav-button-large">
+              Zur Befragung starten
+            </a>
+          </div>
+        </article>
       </div>
-
-      <nav class="exam-footer" aria-label="Navigation der Befragung">
-        <button class="nav-button nav-button-secondary" id="btn-prev" type="button">
-          Zurück
-        </button>
-        <div class="exam-footer-spacer"></div>
-        <button class="nav-button nav-button-primary" id="btn-next" type="button">
-          Weiter
-        </button>
-      </nav>
     </section>
   </main>
 
@@ -75,7 +89,5 @@
       </p>
     </div>
   </footer>
-
-  <script src="app.js"></script>
 </body>
 </html>
