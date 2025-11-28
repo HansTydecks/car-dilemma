@@ -287,7 +287,66 @@ function renderSummary(level) {
     "Fragen für die Diskussion könnten sein: Welche Informationen müssen Algorithmen über Personen haben? Dürfen solche Daten überhaupt gesammelt werden? Wer trägt die Verantwortung für die Programmierung?";
   summaryDiv.appendChild(outroP);
 
+  // Feedback-Button
+  const feedbackBtn = document.createElement("button");
+  feedbackBtn.className = "nav-button nav-button-primary";
+  feedbackBtn.textContent = "Feedback geben";
+  feedbackBtn.style.marginTop = "1.5rem";
+  feedbackBtn.addEventListener("click", toggleFeedback);
+  summaryDiv.appendChild(feedbackBtn);
+
+  summaryDiv.id = "summary-content";
   questionBodyEl.appendChild(summaryDiv);
+  
+  // Container für Feedback (zunächst versteckt)
+  const feedbackDiv = document.createElement("div");
+  feedbackDiv.className = "summary-text";
+  feedbackDiv.id = "feedback-content";
+  feedbackDiv.style.display = "none";
+  
+  const feedbackTitle = document.createElement("h2");
+  feedbackTitle.textContent = "Ihr Feedback";
+  feedbackDiv.appendChild(feedbackTitle);
+  
+  const feedbackIntro = document.createElement("p");
+  feedbackIntro.textContent = "Vielen Dank, dass Sie sich die Zeit nehmen, uns Feedback zu geben. Ihre Meinung hilft uns, diese Simulation zu verbessern.";
+  feedbackDiv.appendChild(feedbackIntro);
+  
+  const feedbackForm = document.createElement("div");
+  feedbackForm.style.marginTop = "1rem";
+  
+  const textarea = document.createElement("textarea");
+  textarea.id = "feedback-textarea";
+  textarea.rows = 6;
+  textarea.style.width = "100%";
+  textarea.style.padding = "0.75rem";
+  textarea.style.border = "1px solid #ccc";
+  textarea.style.borderRadius = "4px";
+  textarea.style.fontSize = "1rem";
+  textarea.placeholder = "Teilen Sie uns Ihre Gedanken mit...";
+  feedbackForm.appendChild(textarea);
+  
+  const buttonContainer = document.createElement("div");
+  buttonContainer.style.marginTop = "1rem";
+  buttonContainer.style.display = "flex";
+  buttonContainer.style.gap = "1rem";
+  
+  const backBtn = document.createElement("button");
+  backBtn.className = "nav-button nav-button-secondary";
+  backBtn.textContent = "Zurück zur Auswertung";
+  backBtn.addEventListener("click", toggleFeedback);
+  buttonContainer.appendChild(backBtn);
+  
+  const submitBtn = document.createElement("button");
+  submitBtn.className = "nav-button nav-button-primary";
+  submitBtn.textContent = "Feedback absenden";
+  submitBtn.addEventListener("click", submitFeedback);
+  buttonContainer.appendChild(submitBtn);
+  
+  feedbackForm.appendChild(buttonContainer);
+  feedbackDiv.appendChild(feedbackForm);
+  
+  questionBodyEl.appendChild(feedbackDiv);
 
   if (level.imagePath) {
     scenarioImageEl.innerHTML = `<img src="${level.imagePath}" alt="${level.imageCaption || 'Auswertung'}" style="width: 100%; height: 100%; object-fit: contain;" />`;
@@ -307,6 +366,50 @@ function selectOption(levelId, optionId) {
   state.answers[levelId] = optionId;
   questionMessageEl.textContent = "";
   renderCurrentLevel();
+}
+
+function toggleFeedback() {
+  const summaryContent = document.getElementById("summary-content");
+  const feedbackContent = document.getElementById("feedback-content");
+  
+  if (summaryContent && feedbackContent) {
+    if (summaryContent.style.display === "none") {
+      // Zeige Auswertung, verstecke Feedback
+      summaryContent.style.display = "block";
+      feedbackContent.style.display = "none";
+    } else {
+      // Zeige Feedback, verstecke Auswertung
+      summaryContent.style.display = "none";
+      feedbackContent.style.display = "block";
+    }
+  }
+}
+
+function submitFeedback() {
+  const textarea = document.getElementById("feedback-textarea");
+  const feedbackText = textarea ? textarea.value.trim() : "";
+  
+  if (!feedbackText) {
+    questionMessageEl.textContent = "Bitte geben Sie ein Feedback ein.";
+    return;
+  }
+  
+  // Hier könnte eine echte Feedback-Übermittlung erfolgen (z.B. per E-Mail oder API)
+  // Für jetzt zeigen wir nur eine Bestätigung
+  questionMessageEl.textContent = "Vielen Dank für Ihr Feedback!";
+  questionMessageEl.style.color = "green";
+  
+  // Textarea leeren
+  if (textarea) {
+    textarea.value = "";
+  }
+  
+  // Nach 2 Sekunden zurück zur Auswertung wechseln
+  setTimeout(() => {
+    toggleFeedback();
+    questionMessageEl.textContent = "";
+    questionMessageEl.style.color = "";
+  }, 2000);
 }
 
 function calculateTendencies() {
